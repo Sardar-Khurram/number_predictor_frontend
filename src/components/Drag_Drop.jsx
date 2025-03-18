@@ -109,6 +109,8 @@ const Drag_Drop = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       {/* Heading */}
+
+
       <h1 className="text-3xl font-bold text-gray-900 mb-6">
         Drag & Drop or Upload an Image
       </h1>
@@ -127,9 +129,12 @@ const Drag_Drop = () => {
             className="w-full h-auto rounded-lg"
           />
         ) : (
-          <p className="text-gray-600">
-            Drag & drop an image here or click to upload.
-          </p>
+          <div className="text-gray-600">
+            <p className="">Drag & drop an image here or click to upload.</p>
+            <span className="text-sm text-red-500 capitalize px-2 m-2 py-1 rounded-lg">
+              Drag and Drop images of only numbers
+            </span>
+          </div>
         )}
       </div>
 

@@ -151,7 +151,7 @@ const Editor = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+    <div className="sm:min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
       {/* Heading */}
       <h1 className="text-3xl font-bold text-gray-900 mb-6">
         Draw a Number

@@ -101,6 +101,10 @@ const Upload = () => {
         Upload an Image
       </h1>
 
+      <span className="text-sm text-red-500 capitalize px-2 py-1 rounded-lg">
+              Upload images of only numbers
+            </span>
+
       {/* File Input and Image Preview */}
       <div className="w-full max-w-md bg-white rounded-lg shadow-lg p-6 text-center">
         {image ? (
