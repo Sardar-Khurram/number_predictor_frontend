@@ -107,7 +107,7 @@ const Drag_Drop = () => {
   };
 
   return (
-    <div className=" sm:min-h-screen bg-gray-100 flex flex-col items-center justify-center py-8 sm:p-4">
+    <div className="sm:min-h-screen sm:bg-gray-100 flex flex-col items-center justify-center py-8 sm:p-4">
       {/* Heading */}
 
 
