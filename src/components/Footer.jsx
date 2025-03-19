@@ -46,9 +46,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: support@numberspredictor.com</li>
-              <li>Phone: +1 (123) 456-7890</li>
-              <li>Address: 123 AI Street, Tech City, World</li>
+              <li>Email: sardarkhurramfarman@gmail.com</li>
+              <li>Phone: +923426346489</li>
+              <li>Address: Mapple Solutions JDH-Muzaffarabad </li>
             </ul>
           </div>
         </div>
@@ -56,18 +56,10 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-400">
           <p>
-            © {new Date().getFullYear()} Numbers Predictor. All rights reserved.
+            © 2025 Numbers Predictor. All rights reserved.
           </p>
           <p className="mt-2">
-            Made by{" "}
-            <a
-              href="https://yourwebsite.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors duration-200"
-            >
-              Sardar Khurram
-            </a>
+            Submitted to <span className="font-bold">Engr. Muhammad Awais</span> By <span className="font-bold">Khurram Farman (2022-SE-01)</span>
           </p>
         </div>
       </div>

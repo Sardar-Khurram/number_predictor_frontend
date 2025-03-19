@@ -63,21 +63,48 @@ const Header = () => {
     // }, []);
 
     return (
-        <header ref={headerRef} className="w-full bg-white shadow-lg z-50">
+        <header ref={headerRef} className="w-full bg-white shadow-lg z-50 pt-2">
             {/* Top Section - Shows/Hides on Scroll */}
             {showTopSection && (
                 <div className="flex flex-col items-center text-center  transition-opacity duration-300">
                     <div className="flex justify-center items-center w-full max-w-6xl mx-auto px-6 space-x-4">
-                        <img src="/logo1.png" alt="University Logo" className="h-20 mt-6" />
+                        <img src="/logo1.png" alt="University Logo" className="h-16" />
                         <div>
                             <h1 className="text-lg font-bold">The University of Azad Jammu and Kashmir</h1>
                             <h2 className="text-sm">Department of Software Engineering</h2>
                         </div>
-                        <img src="/logo2.png" alt="Department Logo" className="h-20 mt-6" />
+                        <img src="/logo2.png" alt="Department Logo" className="h-16" />
                     </div>
-                    <p className="text-sm font-medium">
-                    Machine Learning (SE-3105) | Open Ended Lab
-                    </p>
+                    {/* Compact Table */}
+                    <table className="border border-gray-300 mt-2 text-xs w-full max-w-md">
+                        <thead>
+                            <tr>
+                                <th colSpan="2" className="text-center py-1 bg-gray-100">Open Ended Lab</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="px-2 py-1">Submitted To</td>
+                                <td className="px-2 py-1">Engr. Muhammad Awais</td>
+                            </tr>
+                            <tr>
+                                <td className="px-2 py-1">Course</td>
+                                <td className="px-2 py-1">Machine Learning (SE-3105)</td>
+                            </tr>
+                            <tr>
+                                <td className="px-2 py-1">Submitted by</td>
+                                <td className="px-2 py-1">Khurram Farman</td>
+                            </tr>
+                            <tr>
+                                <td className="px-2 py-1">Roll No</td>
+                                <td className="px-2 py-1">2022-SE-01</td>
+                            </tr>
+                            <tr>
+                                <td className="px-2 py-1">Batch</td>
+                                <td className="px-2 py-1">2022-26</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             )}
 
@@ -93,6 +120,7 @@ const Header = () => {
                     <Link to="/editor" className="hover:scale-105 hover:font-bold">Editor</Link>
                     <Link to="/drag-drop" className="hover:scale-105 hover:font-bold">Drag & Drop</Link>
                     <Link to="/upload" className="hover:scale-105 hover:font-bold">Upload</Link>
+                    <Link to="/report" className="hover:scale-105 hover:font-bold">Documentation</Link>
                 </nav>
 
                 {/* Hamburger Menu (Only below md) */}
@@ -127,6 +155,9 @@ const Header = () => {
                         </Link>
                         <Link to="/upload" className="hover:scale-105 hover:font-bold" onClick={() => setIsOpen(false)}>
                             Upload
+                        </Link>
+                        <Link to="/report" className="hover:scale-105 hover:font-bold" onClick={() => setIsOpen(false)}>
+                            Report
                         </Link>
                     </div>
                 </div>

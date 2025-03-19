@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Editor from "./components/Editor";
 import Drag_Drop from "./components/Drag_Drop";
 import Upload from "./components/Upload";
+import Report from "./components/Report";
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/drag-drop" element={<Drag_Drop />} />
             <Route path="/upload" element={<Upload />} />
             <Route path="/" element={<Home />} />
+            <Route path="/report" element={<Report />} />
           </Routes>
         </main>
         <Footer />
