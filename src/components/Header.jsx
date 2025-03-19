@@ -9,90 +9,90 @@ const Header = () => {
     const headerRef = useRef(null);
     let lastScrollY = window.scrollY;
 
-    useEffect(() => {
-        let isScrolling;
-        let lastScrollY = window.scrollY;
+    // useEffect(() => {
+    //     let isScrolling;
+    //     let lastScrollY = window.scrollY;
 
-        const scrollHandler = () => {
-            // Clear the timeout to prevent rapid state updates
-            clearTimeout(isScrolling);
+    //     const scrollHandler = () => {
+    //         // Clear the timeout to prevent rapid state updates
+    //         clearTimeout(isScrolling);
 
-            // Debounce the scroll handler
-            isScrolling = setTimeout(() => {
-                if (window.scrollY > 40) {
-                    // Fix the header to the top
-                    if (headerRef.current) {
-                        headerRef.current.style.position = "fixed";
-                        headerRef.current.style.top = "0";
-                        headerRef.current.style.left = "0";
-                        headerRef.current.style.right = "0";
-                        headerRef.current.style.background = "rgba(255, 255, 255, 0.8)"; // Transparent effect
-                        headerRef.current.style.transition = "top 0.5s ease-in-out, background 0.5s ease-in-out"; // Slower transition
-                        headerRef.current.style.boxShadow = "0px 6px 6px rgba(0, 0, 0, 0.1)";
-                        headerRef.current.style.backdropFilter = "blur(10px)"; // Glass effect
-                    }
+    //         // Debounce the scroll handler
+    //         isScrolling = setTimeout(() => {
+    //             if (window.scrollY > 40) {
+    //                 // Fix the header to the top
+    //                 if (headerRef.current) {
+    //                     headerRef.current.style.position = "fixed";
+    //                     headerRef.current.style.top = "0";
+    //                     headerRef.current.style.left = "0";
+    //                     headerRef.current.style.right = "0";
+    //                     headerRef.current.style.background = "rgba(255, 255, 255, 0.8)"; // Transparent effect
+    //                     headerRef.current.style.transition = "top 0.5s ease-in-out, background 0.5s ease-in-out"; // Slower transition
+    //                     headerRef.current.style.boxShadow = "0px 6px 6px rgba(0, 0, 0, 0.1)";
+    //                     headerRef.current.style.backdropFilter = "blur(10px)"; // Glass effect
+    //                 }
 
-                    // Hide the top section when scrolling down
-                    if (window.scrollY > lastScrollY) {
-                        setShowTopSection(false);
-                    }
-                } else {
-                    // Reset the header to its original state
-                    if (headerRef.current) {
-                        headerRef.current.style.position = "relative";
-                        headerRef.current.style.background = "white";
-                        headerRef.current.style.boxShadow = "none";
-                        headerRef.current.style.backdropFilter = "none";
-                    }
-                    // Show the top section only when fully scrolled to the top
-                    if (window.scrollY <= 5) {
-                        setShowTopSection(true);
-                    }
-                }
+    //                 // Hide the top section when scrolling down
+    //                 if (window.scrollY > lastScrollY) {
+    //                     setShowTopSection(false);
+    //                 }
+    //             } else {
+    //                 // Reset the header to its original state
+    //                 if (headerRef.current) {
+    //                     headerRef.current.style.position = "relative";
+    //                     headerRef.current.style.background = "white";
+    //                     headerRef.current.style.boxShadow = "none";
+    //                     headerRef.current.style.backdropFilter = "none";
+    //                 }
+    //                 // Show the top section only when fully scrolled to the top
+    //                 if (window.scrollY <= 5) {
+    //                     setShowTopSection(true);
+    //                 }
+    //             }
 
-                // Update lastScrollY for the next scroll event
-                lastScrollY = window.scrollY;
-            }, 100); // Adjust debounce delay as needed
-        };
+    //             // Update lastScrollY for the next scroll event
+    //             lastScrollY = window.scrollY;
+    //         }, 100); // Adjust debounce delay as needed
+    //     };
 
-        window.addEventListener("scroll", scrollHandler);
+    //     window.addEventListener("scroll", scrollHandler);
 
-        return () => {
-            window.removeEventListener("scroll", scrollHandler);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener("scroll", scrollHandler);
+    //     };
+    // }, []);
 
     return (
-        <header ref={headerRef} className="w-full bg-white shadow-md z-50 border-b">
+        <header ref={headerRef} className="w-full bg-white shadow-lg z-50">
             {/* Top Section - Shows/Hides on Scroll */}
             {showTopSection && (
-                <div className="flex flex-col items-center text-center py-2 transition-opacity duration-300">
+                <div className="flex flex-col items-center text-center  transition-opacity duration-300">
                     <div className="flex justify-center items-center w-full max-w-6xl mx-auto px-6 space-x-4">
-                        <img src="/logo1.png" alt="University Logo" className="h-20" />
+                        <img src="/logo1.png" alt="University Logo" className="h-20 mt-6" />
                         <div>
                             <h1 className="text-lg font-bold">The University of Azad Jammu and Kashmir</h1>
                             <h2 className="text-sm">Department of Software Engineering</h2>
                         </div>
-                        <img src="/logo2.png" alt="Department Logo" className="h-20" />
+                        <img src="/logo2.png" alt="Department Logo" className="h-20 mt-6" />
                     </div>
-                    <p className="mt-1 text-sm font-medium">
+                    <p className="text-sm font-medium">
                     Machine Learning (SE-3105) | Open Ended Lab
                     </p>
                 </div>
             )}
 
             {/* Navigation Bar (Sticky on Scroll) */}
-            <div ref={navRef} className="flex items-center justify-between w-full max-w-6xl mx-auto py-2 px-6">
+            <div ref={navRef} className="flex items-center justify-between w-full max-w-6xl mx-auto pb-2 px-6">
                 {/* App Title */}
-                <Link to="/" className="text-xl font-semibold text-gray-900 hover:text-blue-600">
+                <Link to="/" className="text-xl font-semibold text-gray-900 hover:scale-105 hover:font-bold">
                     Numbers Predictor
                 </Link>
 
                 {/* Navigation Links (Hidden below md) */}
                 <nav className="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
-                    <Link to="/editor" className="hover:text-blue-600">Editor</Link>
-                    <Link to="/drag-drop" className="hover:text-blue-600">Drag & Drop</Link>
-                    <Link to="/upload" className="hover:text-blue-600">Upload</Link>
+                    <Link to="/editor" className="hover:scale-105 hover:font-bold">Editor</Link>
+                    <Link to="/drag-drop" className="hover:scale-105 hover:font-bold">Drag & Drop</Link>
+                    <Link to="/upload" className="hover:scale-105 hover:font-bold">Upload</Link>
                 </nav>
 
                 {/* Hamburger Menu (Only below md) */}
@@ -119,13 +119,13 @@ const Header = () => {
                         >
                             ✖
                         </button>
-                        <Link to="/editor" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                        <Link to="/editor" className="hover:scale-105 hover:font-bold" onClick={() => setIsOpen(false)}>
                             Editor
                         </Link>
-                        <Link to="/drag-drop" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                        <Link to="/drag-drop" className="hover:scale-105 hover:font-bold" onClick={() => setIsOpen(false)}>
                             Drag & Drop
                         </Link>
-                        <Link to="/upload" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>
+                        <Link to="/upload" className="hover:scale-105 hover:font-bold" onClick={() => setIsOpen(false)}>
                             Upload
                         </Link>
                     </div>

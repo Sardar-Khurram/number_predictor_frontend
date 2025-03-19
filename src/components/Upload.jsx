@@ -95,7 +95,7 @@ const Upload = () => {
   };
 
   return (
-    <div className="sm:min-h-screen sm:bg-gray-100 flex flex-col items-center justify-center py-8 sm:p-4">
+    <div className="sm:min-h-screen sm:bg-gray-100 flex flex-col items-center justify-center my-8 sm:m-8 rounded-2xl">
       {/* Heading */}
       <h1 className="text-3xl font-bold text-gray-900 mb-6">
         Upload an Image
