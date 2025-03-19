@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-auto">
+    <footer className="bg-gray-900 text-white py-8 mt-auto">
       <div className="max-w-6xl mx-auto px-6">
         {/* Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -20,22 +20,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link to="/editor" className="hover:text-white">
+                <Link to="/editor" className="hover:text-white transition-colors duration-200">
                   Editor
                 </Link>
               </li>
               <li>
-                <Link to="/drag-drop" className="hover:text-white">
+                <Link to="/drag-drop" className="hover:text-white transition-colors duration-200">
                   Drag & Drop
                 </Link>
               </li>
               <li>
-                <Link to="/upload" className="hover:text-white">
+                <Link to="/upload" className="hover:text-white transition-colors duration-200">
                   Upload
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-white">
+                <Link to="/" className="hover:text-white transition-colors duration-200">
                   Home
                 </Link>
               </li>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 mt-6 pt-6 text-center text-sm text-gray-400">
+        <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm text-gray-400">
           <p>
             © {new Date().getFullYear()} Numbers Predictor. All rights reserved.
           </p>
@@ -64,7 +64,7 @@ const Footer = () => {
               href="https://yourwebsite.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white"
+              className="hover:text-white transition-colors duration-200"
             >
               Sardar Khurram
             </a>
