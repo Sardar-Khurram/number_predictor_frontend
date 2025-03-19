@@ -12,7 +12,7 @@ import Report from "./components/Report";
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen w-fit">
         <Header />
         <main className="flex-grow">
           <Routes>

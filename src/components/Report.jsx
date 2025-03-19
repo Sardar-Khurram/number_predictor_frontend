@@ -9,7 +9,9 @@ const Report = () => {
         { id: "evaluation", title: "Evaluation Metrics" },
         { id: "results", title: "Results" },
         { id: "discussion", title: "Discussion" },
-        { id: "conclusion", title: "Conclusion" }
+        { id: "conclusion", title: "Model Conclusion" },
+        { id: "app-overview", title: "Web Application" },
+        { id: "links", title: "links" }
     ];
 
     const [activeSection, setActiveSection] = useState("");
@@ -57,7 +59,7 @@ const Report = () => {
             </nav>
 
             {/* Report Content */}
-            <div className="max-w-4xl mx-auto px-6 md:p-6 text-gray-900">
+            <div className="max-w-4xl mx-auto py-6 md:p-6 text-gray-900">
                 <h1 className="text-3xl font-bold text-center mb-4">
                     Classification of MNIST Handwritten Digits Using Machine Learning
                 </h1>
@@ -66,15 +68,15 @@ const Report = () => {
                 {/* Introduction */}
                 <section id="introduction" className="mb-4 md:mb-6 px-4 md:px-0">
                     <h2 className="text-lg md:text-2xl font-semibold mb-2">1. Introduction</h2>
-                    <p className="text-base md:text-lg leading-relaxed">
-                        The <strong>MNIST dataset</strong> is a widely used benchmark in the field of machine learning and computer vision.
-                        It consists of <strong>28x28 grayscale images</strong> of handwritten digits (0-9), each flattened into a <strong>1D vector
-                            of 784 features</strong>. The dataset is split into training and testing sets, stored in CSV files (<strong>mnist_train.csv</strong>
-                        and <strong>mnist_test.csv</strong>). The objective of this lab is to experiment with various machine learning models, evaluate
+                    <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                        The <strong className="font-semibold">MNIST dataset</strong> is a widely used benchmark in the field of machine learning and computer vision.
+                        It consists of <strong className="font-semibold">28x28 grayscale images</strong> of handwritten digits (0-9), each flattened into a <strong className="font-semibold">1D vector
+                            of 784 features</strong>. The dataset is split into training and testing sets, stored in CSV files (<strong className="font-semibold">mnist_train.csv</strong>
+                        and <strong className="font-semibold">mnist_test.csv</strong>). The objective of this lab is to experiment with various machine learning models, evaluate
                         their performance, and identify the best-performing model for classifying handwritten digits.
-                        <br />
+                        <br /><br />
                         This report documents the methodology, results, and analysis of the classification task using
-                        <strong> Logistic Regression, Random Forest, K-Nearest Neighbors (KNN), and Neural Network (MLP)</strong> models.
+                        <strong className="font-semibold"> Logistic Regression, Random Forest, K-Nearest Neighbors (KNN), and Neural Network (MLP)</strong> models.
                         The models were trained, tuned, and evaluated based on accuracy, precision, recall, and F1-score.
                     </p>
                 </section>
@@ -106,7 +108,6 @@ y_test = df_test[['label']]`}
                         </code>
                     </pre>
 
-                    <h3 id="models" className="text-base md:text-xl font-medium mt-4 mb-1">2.2 Models Used</h3>
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h2 className="text-lg md:text-2xl font-bold mb-4">2.2 Model Details</h2>
 
@@ -302,7 +303,7 @@ y_test = df_test[['label']]`}
                 {/* Conclusion */}
                 <section id="conclusion" className="mb-6">
                     <div className="bg-white p-6 rounded-lg shadow-md">
-                        <h2 className="text-2xl font-bold mb-4">5. Conclusion</h2>
+                        <h2 className="text-2xl font-bold mb-4">5. Model Conclusion</h2>
 
                         <p className="mt-2 text-gray-700">
                             In this lab, four machine learning models were trained and evaluated on the
@@ -347,6 +348,76 @@ y_test = df_test[['label']]`}
                         <p className="mt-4 text-gray-700">
                             This concludes the report on the classification of MNIST handwritten digits using machine learning.
                         </p>
+                    </div>
+                </section>
+
+                {/* Numbers Predictor App Overview */}
+                <section id="app-overview" className="mb-6">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-2xl font-bold mb-4">6. Numbers Predictor App</h2>
+
+                        <p className="mt-2 text-gray-700">
+                            The <strong className="text-blue-600">Numbers Predictor App</strong> is a web-based application
+                            that predicts handwritten digits using a trained <strong>Artificial Neural Network (ANN)</strong>.
+                            It consists of a <strong>Flask backend</strong> for model inference and a <strong>React frontend</strong>
+                            for user interaction, deployed on <strong>Railway</strong> and <strong>Vercel</strong>.
+                        </p>
+
+                        {/* Technologies Used */}
+                        <h3 className="text-xl font-semibold mt-6">6.1 Technologies Used</h3>
+                        <ul className="list-disc list-inside ml-4 text-gray-700 mt-2">
+                            <li><strong>Frontend:</strong> React, Tailwind CSS</li>
+                            <li><strong>Backend:</strong> Flask (Python), Joblib for model loading</li>
+                            <li><strong>Machine Learning:</strong> ANN trained on MNIST dataset</li>
+                            <li><strong>Deployment:</strong> Vercel (Frontend), Railway (Backend)</li>
+                            <li><strong>API Communication:</strong> REST API (Flask → React)</li>
+                        </ul>
+
+                        {/* Frontend Development */}
+                        <h3 className="text-xl font-semibold mt-6">6.2 Frontend Development</h3>
+                        <p className="mt-2 text-gray-700">
+                            The frontend is built using <strong>React</strong> with <strong>Tailwind CSS</strong> for styling.
+                            It provides a simple interface for users to Draw, Drag & Drop or upload an image, send it to the backend, and receive the predicted digit.
+                        </p>
+
+                        {/* Backend Development */}
+                        <h3 className="text-xl font-semibold mt-6">6.3 Backend Development</h3>
+                        <p className="mt-2 text-gray-700">
+                            The backend is built using <strong>Flask</strong>. It loads the trained ANN model using <strong>Joblib </strong>
+                            an API endpoint for predictions. The backend processes image inputs, preprocesses them,
+                            and returns the predicted digit.
+                        </p>
+
+                        {/* Deployment */}
+                        <h3 className="text-xl font-semibold mt-6">6.4 Deployment</h3>
+                        <p className="mt-2 text-gray-700">
+                            The application is deployed with:
+                        </p>
+                        <ul className="list-disc list-inside ml-4 text-gray-700 mt-2">
+                            <li><strong>Vercel:</strong> Hosts the frontend (React app).</li>
+                            <li><strong>Railway:</strong> Hosts the backend (Flask API and model).</li>
+                            <li><strong>Environment Variable:</strong> <code>VITE_API_URL</code> is used to connect frontend and backend.</li>
+                        </ul>
+
+                        <p className="mt-4 text-gray-700">
+                            The Numbers Predictor App is now live and fully functional, enabling users to classify handwritten digits efficiently.
+                        </p>
+                    </div>
+                </section>
+
+
+                {/* Links Section */}
+                <section id="links" className="mb-6">
+                    <div className="bg-white p-6 rounded-lg shadow-md">
+                        <h2 className="text-2xl font-bold mb-4">7. Links</h2>
+                        <ul className="list-disc list-inside ml-4 text-gray-700 mt-2">
+                            <li><strong>ML Repository:</strong> <a target="_blank" href="https://github.com/KhurramFarman/2022_SE_01_ML_Lab_Tasks" className="text-blue-600 hover:underline">https://github.com/KhurramFarman/2022_SE_01_ML_Lab_Tasks</a></li>
+                            <li><strong>OEL Repository:</strong> <a target="_blank" href="https://github.com/KhurramFarman/2022_SE_01_ML_Lab_Tasks/tree/main/Open%20Ended%20Lab" className="text-blue-600 hover:underline">https://github.com/KhurramFarman/2022_SE_01_ML_Lab_Tasks/Open_Ended_Lab</a></li>
+                            <li><strong>Frontend Code:</strong> <a target="_blank" href="https://github.com/Sardar-Khurram/number_predictor_frontend" className="text-blue-600 hover:underline">https://github.com/Sardar-Khurram/number_predictor_frontend</a></li>
+                            <li><strong>Backend Code:</strong> <a target="_blank" href="https://github.com/Sardar-Khurram/numbers_predictor_backend" className="text-blue-600 hover:underline">https://github.com/Sardar-Khurram/numbers_predictor_backend</a></li>
+                            <li><strong>Vercel Deployment:</strong> <a target="_blank" href="https://number-predictor-frontend.vercel.app/" className="text-blue-600 hover:underline">https://number-predictor-frontend.vercel.app/</a></li>
+                            <li><strong>Railway Deployment:</strong> <a target="_blank" href="https://web-production-7cd13.up.railway.app/" className="text-blue-600 hover:underline">https://web-production-7cd13.up.railway.app/</a></li>
+                        </ul>
                     </div>
                 </section>
 

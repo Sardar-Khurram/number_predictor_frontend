@@ -63,7 +63,7 @@ const Header = () => {
     // }, []);
 
     return (
-        <header ref={headerRef} className="w-full bg-white shadow-lg z-50 pt-2">
+        <header ref={headerRef} className=" bg-white shadow-lg z-50 pt-2">
             {/* Top Section - Shows/Hides on Scroll */}
             {showTopSection && (
                 <div className="flex flex-col items-center text-center  transition-opacity duration-300">
@@ -109,7 +109,7 @@ const Header = () => {
             )}
 
             {/* Navigation Bar (Sticky on Scroll) */}
-            <div ref={navRef} className="flex items-center justify-between w-full max-w-6xl mx-auto pb-2 px-6">
+            <div ref={navRef} className=" flex items-center justify-between w-full max-w-6xl mx-auto pb-2 px-6">
                 {/* App Title */}
                 <Link to="/" className="text-xl font-semibold text-gray-900 hover:scale-105 hover:font-bold">
                     Numbers Predictor
