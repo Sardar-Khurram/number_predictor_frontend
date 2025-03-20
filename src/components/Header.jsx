@@ -135,14 +135,14 @@ const Header = () => {
 
             {/* Sidebar (Only appears when isOpen is true) */}
             {isOpen && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={() => setIsOpen(false)}>
+                <div className="fixed inset-0 bg-gray-800 opacity-80 z-50" onClick={() => setIsOpen(false)}>
                     <div
-                        className="fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 flex flex-col space-y-4"
+                        className="opacity-100 fixed top-0 right-0 h-full w-64 bg-gray-950 text-white shadow-lg p-6 flex flex-col space-y-4"
                         onClick={(e) => e.stopPropagation()} // Prevent closing on inside click
                     >
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="self-end text-gray-900 text-lg focus:outline-none"
+                            className="self-end text-gray-100 text-lg focus:outline-none"
                             aria-label="Close menu"
                         >
                             ✖
